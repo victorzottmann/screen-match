@@ -1,9 +1,11 @@
+package screenmatch.models;
+
 public class Movie {
-    String title;
-    String plot;
-    int yearReleased;
-    boolean includedInPlan;
-    int durationInMinutes;
+    public String title;
+    public String plot;
+    public int yearReleased;
+    public boolean includedInPlan;
+    public int durationInMinutes;
     private double averageRating;
     private int totalRatings;
     private double sumOfRatings;
@@ -37,7 +39,7 @@ public class Movie {
                 );
     }
     
-    double getAverageRating() {
+    public double getAverageRating() {
         if (totalRatings == 0) {
             return 0.0;
         }
@@ -45,16 +47,16 @@ public class Movie {
         return Double.parseDouble(String.format("%.1f", averageRating));
     }
 
-    void setAverageRating(double rating) {
+    public void setAverageRating(double rating) {
         this.sumOfRatings += rating;
         totalRatings++;
     }
 
-    double getSumOfRatings() {
+    public double getSumOfRatings() {
         return sumOfRatings;
     }
 
-    double getTotalRatings() {
+    public double getTotalRatings() {
         return totalRatings;
     }
 }

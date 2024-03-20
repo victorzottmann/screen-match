@@ -1,3 +1,5 @@
+import screenmatch.models.Movie;
+
 public class Main {
     public static void main(String[] args) {
         Movie topGun = new Movie("Top Gun Maverick", 2022, true, 140);
