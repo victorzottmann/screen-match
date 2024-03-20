@@ -4,9 +4,9 @@ public class Movie {
     int yearReleased;
     boolean includedInPlan;
     int durationInMinutes;
-    int totalRatings;
-    double sumOfRatings;
-    double averageRating;
+    private double averageRating;
+    private int totalRatings;
+    private double sumOfRatings;
 
     public Movie(String title, int yearReleased, boolean includedInPlan, int durationInMinutes) {
         this.title = title;
@@ -36,11 +36,6 @@ public class Movie {
                 includedInPlanText
                 );
     }
-
-    void rate(double rating) {
-        this.sumOfRatings += rating;
-        totalRatings++;
-    }
     
     double getAverageRating() {
         if (totalRatings == 0) {
@@ -48,5 +43,18 @@ public class Movie {
         }
         this.averageRating = sumOfRatings / totalRatings;
         return Double.parseDouble(String.format("%.1f", averageRating));
+    }
+
+    void setAverageRating(double rating) {
+        this.sumOfRatings += rating;
+        totalRatings++;
+    }
+
+    double getSumOfRatings() {
+        return sumOfRatings;
+    }
+
+    double getTotalRatings() {
+        return totalRatings;
     }
 }
